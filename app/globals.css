@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg text-text-primary antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(232, 169, 58, 0.045), transparent 40%),
+      radial-gradient(circle at 88% 0%, rgba(232, 169, 58, 0.035), transparent 35%);
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+
+  ::selection {
+    background-color: rgba(232, 169, 58, 0.25);
+    color: #f2f0eb;
+  }
+
+  :focus-visible {
+    outline: 2px solid #e8a93a;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    @apply px-6 md:px-10;
+  }
+
+  /* Single spacing scale for all major sections — keep section rhythm consistent site-wide */
+  .section-py {
+    @apply py-20 md:py-28;
+  }
+
+  .section-py-tight {
+    @apply py-14 md:py-16;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-accent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-20 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-[#1A1206] transition-transform focus:translate-y-0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
