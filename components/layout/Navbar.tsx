@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,20 +45,20 @@ export function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="group relative font-sans text-sm text-text-muted transition-colors hover:text-text-primary"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className="">
           <Button variant="primary" size="sm" asChild>
-            <a href="#cta">Book a call</a>
+            <a href="/contact">Book a call</a>
           </Button>
         </div>
 
@@ -85,18 +86,18 @@ export function Navbar() {
             <ul className="container-px mx-auto flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className="block py-3 text-text-muted transition-colors hover:text-text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="pt-2">
                 <Button variant="primary" size="default" className="w-full" asChild>
-                  <a href="#cta" onClick={() => setOpen(false)}>
+                  <a href="/contact" onClick={() => setOpen(false)}>
                     Book a call
                   </a>
                 </Button>

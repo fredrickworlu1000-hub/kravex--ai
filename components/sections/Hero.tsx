@@ -39,7 +39,7 @@ export function Hero() {
           </motion.p>
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
             <Button size="lg" asChild className="group">
-              <a href="#cta">
+              <a href="/contact">
                 Book a strategy call
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>

@@ -72,3 +72,21 @@
     scroll-behavior: auto !important;
   }
 }
+
+@layer utilities {
+  .field {
+    @apply w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text-primary placeholder:text-text-muted/70 transition-colors duration-200 focus:border-accent/60 focus:outline-none;
+  }
+
+  .field-invalid {
+    @apply border-red-500/50 focus:border-red-500/70;
+  }
+
+  .field-label {
+    @apply mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted;
+  }
+
+  .field-error {
+    @apply mt-1.5 text-xs text-red-400;
+  }
+}

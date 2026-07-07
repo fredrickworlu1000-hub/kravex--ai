@@ -22,7 +22,7 @@ export function FinalCTA() {
             </p>
             <div className="mt-9 flex justify-center">
               <Button size="lg" asChild className="group">
-                <a href="mailto:hello@kravex.ai">
+                <a href="/contact">
                   Book a strategy call
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
                 </a>
