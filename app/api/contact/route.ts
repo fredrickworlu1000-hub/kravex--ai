@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validation/contact";
+import { supabase } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 
@@ -21,6 +22,16 @@ export async function POST(request: Request) {
     }
 
     const { name, email, company, message } = result.data;
+    const { error: dbError } = await supabase.from("leads").insert({
+      name,
+      email,
+      company: company || null,
+      message,
+    });
+
+    if (dbError) {
+      console.error("Supabase insert error:", dbError);
+    }
 
     const apiKey = process.env.RESEND_API_KEY;
     const toEmail = process.env.CONTACT_TO_EMAIL ?? "hello@kravex.ai";
