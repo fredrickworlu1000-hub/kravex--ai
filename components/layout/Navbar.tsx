@@ -56,7 +56,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="">
+        <div className="#">
           <Button variant="primary" size="sm" asChild>
             <a href="/contact">Book a call</a>
           </Button>

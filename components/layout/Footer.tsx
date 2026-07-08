@@ -40,30 +40,26 @@ export function Footer() {
                 Connect
               </p>
               <ul className="mt-4 space-y-3">
-                <li>
-                  <a
-                    href="mailto:hello@kravex.ai"
-                    className="text-sm text-text-muted transition-colors hover:text-text-primary"
-                  >
-                    hello@kravex.ai
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm text-text-muted transition-colors hover:text-text-primary"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm text-text-muted transition-colors hover:text-text-primary"
-                  >
-                    Instagram
-                  </a>
-                </li>
+               <li>
+  
+    
+    <a href="mailto:fredrickworlu1000@gmail.com"
+    className="text-sm text-text-muted transition-colors hover:text-text-primary"
+  >
+    fredrickworlu1000@gmail.com
+  </a>
+</li>
+                
+               <li>
+  
+    <a href="https://www.linkedin.com/in/fredrick-worlu-831217308"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sm text-text-muted transition-colors hover:text-text-primary">
+  
+    LinkedIn
+  </a>
+</li>
               </ul>
             </div>
           </div>
@@ -71,7 +67,6 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col-reverse items-start gap-4 border-t border-border pt-6 text-xs text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Kravex AI. All rights reserved.</p>
-          <p className="font-mono">Built with Next.js</p>
         </div>
       </div>
     </footer>
