@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validation/contact";
 import { supabase } from "@/lib/supabase";
+import { analyzeLead } from "@/lib/gemini";
 
 export const runtime = "nodejs";
 
@@ -22,11 +23,17 @@ export async function POST(request: Request) {
     }
 
     const { name, email, company, message } = result.data;
+    const analysis = await analyzeLead(name, message);
+
     const { error: dbError } = await supabase.from("leads").insert({
       name,
       email,
       company: company || null,
       message,
+      category: analysis.category,
+      urgency: analysis.urgency,
+      summary: analysis.summary,
+      ai_draft: analysis.draft,
     });
 
     if (dbError) {
@@ -51,14 +58,21 @@ export async function POST(request: Request) {
       from: `Kravex AI Website <${fromEmail}>`,
       to: toEmail,
       replyTo: email,
-      subject: `New inquiry from ${name}${company ? ` (${company})` : ""}`,
+      subject: `[${analysis.urgency.toUpperCase()}] New ${analysis.category} inquiry from ${name}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
         company ? `Company: ${company}` : null,
         "",
-        "Message:",
+        `AI Summary: ${analysis.summary}`,
+        `Category: ${analysis.category}`,
+        `Urgency: ${analysis.urgency}`,
+        "",
+        "Original message:",
         message,
+        "",
+        "Suggested reply draft:",
+        analysis.draft,
       ].filter(Boolean).join("\n"),
     });
 
