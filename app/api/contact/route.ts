@@ -75,6 +75,27 @@ export async function POST(request: Request) {
         analysis.draft,
       ].filter(Boolean).join("\n"),
     });
+    
+    const { error: visitorEmailError } = await resend.emails.send({
+      from: `Kravex AI <${fromEmail}>`,
+      to: email,
+      subject: "We received your message",
+      text: [
+        `Hi ${name},`,
+        "",
+        "Thanks for reaching out to Kravex AI — we've received your message and will get back to you within one business day.",
+        "",
+        "In the meantime, feel free to reply directly to this email if you have anything to add.",
+        "",
+        "— Kravex AI",
+      ].join("\n"),
+    });
+
+    if (visitorEmailError) {
+      console.error("Visitor confirmation email error:", visitorEmailError);
+    }
+
+
 
     if (error) {
       console.error("Resend send error:", error);
