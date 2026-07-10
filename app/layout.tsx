@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Kravex AI — AI Automation & Lead Systems",
     description:
       "We design AI-powered automation pipelines that capture, qualify, and convert leads on autopilot.",
-    url: siteUrl,
+    url: "kravex-ai-2wur.vercel.app/",
     images: ["/og-image.png"],
     siteName: "Kravex AI",
     type: "website",
