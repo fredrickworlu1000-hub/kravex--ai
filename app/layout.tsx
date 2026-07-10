@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -46,6 +45,7 @@ export const metadata: Metadata = {
     description:
       "We design AI-powered automation pipelines that capture, qualify, and convert leads on autopilot.",
     url: siteUrl,
+    images: ["/og-image.png"],
     siteName: "Kravex AI",
     type: "website",
   },
@@ -80,7 +80,6 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
-        <Analytics />
       </body>
     </html>
   );
