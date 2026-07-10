@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Kravex AI — AI Automation & Lead Systems",
     description:
       "We design AI-powered automation pipelines that capture, qualify, and convert leads on autopilot.",
-    url: "kravex-ai-2wur.vercel.app/",
+    url: "https://kravex-ai-2wur.vercel.app/",
     images: ["/og-image.png"],
     siteName: "Kravex AI",
     type: "website",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
   robots: {
     index: true,
