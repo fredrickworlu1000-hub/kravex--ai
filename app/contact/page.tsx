@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const DETAILS = [
-  { icon: Mail, label: "Email", value: "hello@kravex.ai", href: "mailto:hello@kravex.ai" },
+  { icon: Mail, label: "Email", value: "fredrickworlu1000@gmail.com", href: "mailto:fredrickworlu1000@gmail.com" },
   { icon: Clock, label: "Response time", value: "Within 1 business day" },
   { icon: MessageSquare, label: "What to include", value: "Your current lead flow and where it breaks down" },
 ];
