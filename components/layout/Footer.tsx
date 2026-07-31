@@ -11,8 +11,7 @@ export function Footer() {
               <span className="text-accent">AI</span>
             </a>
             <p className="mt-4 text-sm leading-relaxed text-text-muted">
-              AI automation and lead systems for teams who&apos;d rather their
-              pipeline ran itself.
+              AI automation and lead systems built for real estate brokerages who'd rather their pipeline ran itself.
             </p>
           </div>
 

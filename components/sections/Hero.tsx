@@ -20,22 +20,22 @@ export function Hero() {
       <div className="container-px mx-auto grid max-w-content items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.p variants={item} className="eyebrow mb-5">
-            AI Automation Studio
+            AI Automation for Real Estate Brokerages
           </motion.p>
           <motion.h1
             variants={item}
             className="font-display text-[2.75rem] leading-[1.08] text-balance text-text-primary sm:text-6xl md:text-[4.5rem] md:leading-[1.05]"
           >
-            Your leads deserve a{" "}
-            <span className="text-accent">pipeline that never sleeps.</span>
+           Never Miss{" "}
+          <span className="text-accent">Another Lead.</span>
           </motion.h1>
           <motion.p
             variants={item}
             className="mt-6 max-w-lg text-base leading-relaxed text-text-muted md:text-lg"
           >
-            Kravex AI builds the automation infrastructure behind your lead
-            capture, qualification, and outreach — so every inquiry gets a
-            response in minutes, not days.
+          AI automation built for real estate brokerages. We help your team
+respond to every inquiry instantly, follow up automatically, and
+book more showings — without adding headcount.
           </motion.p>
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
             <Button size="lg" asChild className="group">
