@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DEMO_URL } from "@/lib/site";
 import { Reveal } from "@/components/shared/Reveal";
 
 export function FinalCTA() {
@@ -20,11 +21,16 @@ export function FinalCTA() {
               Book a 20-minute call. We&apos;ll look at your current lead flow and
               tell you exactly where automation pays off first.
             </p>
-            <div className="mt-9 flex justify-center">
+                        <div className="mt-9 flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild className="group">
                 <a href="/contact">
                   Book a strategy call
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+              </Button>
+                            <Button variant="secondary" size="lg" asChild>
+                <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+                  See Live Demo
                 </a>
               </Button>
             </div>

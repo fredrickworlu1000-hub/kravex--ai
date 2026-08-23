@@ -1,0 +1,1 @@
+export const DEMO_URL = "https://kravex1.vercel.app/";

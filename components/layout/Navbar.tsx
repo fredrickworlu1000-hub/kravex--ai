@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { DEMO_URL } from "@/lib/site";
 import Link from "next/link";
 
 export function Navbar() {
@@ -56,7 +57,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="#">
+               <div className="hidden md:flex items-center gap-3">
+          <Button variant="secondary" size="sm" asChild>
+            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+              See Live Demo
+            </a>
+          </Button>
           <Button variant="primary" size="sm" asChild>
             <a href="/contact">Book a call</a>
           </Button>
@@ -95,6 +101,14 @@ export function Navbar() {
                   </Link>
                 </li>
               ))}
+                            <li className="pt-2">
+                <Button variant="secondary" size="default" className="w-full" asChild>
+                  <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                    See Live Demo
+                  </a>
+                </Button>
+              </li>
+              
               <li className="pt-2">
                 <Button variant="primary" size="default" className="w-full" asChild>
                   <a href="/contact" onClick={() => setOpen(false)}>

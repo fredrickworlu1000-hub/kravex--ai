@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DEMO_URL } from "@/lib/site";
 import { PipelineDiagram } from "@/components/shared/PipelineDiagram";
 
 const container = {
@@ -44,6 +45,12 @@ book more showings — without adding headcount.
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
             </Button>
+                        <Button variant="secondary" size="lg" asChild>
+              <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
+                See Live Demo
+              </a>
+            </Button>
+            
             <Button variant="secondary" size="lg" asChild>
               <a href="#case-studies">See the work</a>
             </Button>
